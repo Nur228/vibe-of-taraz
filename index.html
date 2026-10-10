@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vibe of Taraz — Тараз қаласына гид</title>
+<meta name="description" content="Тараздың тарихы, мәдениеті, тамағы, саудасы және демалыс орындары. 1, 2 және 3 күндік дайын маршруттар, карта және әр орынның толық сипаттамасы.">
+<meta name="theme-color" content="#0757a6">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vibe of Taraz — Ежелгі қала. Жаңа vibe.">
+<meta property="og:description" content="Тараздағы 24 орын және 3 дайын маршрут: тарих, кофе, сауда, саябақтар.">
+<meta property="og:image" content="img/kone-taraz.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230757a6'/%3E%3Cpath d='M32 10l6 14 15 1-11 10 4 15-14-8-14 8 4-15-11-10 15-1z' fill='%23d6a629'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0757a6;--blue-2:#0b78c8;--blue-deep:#0a2f5c;--gold:#d6a629;--gold-soft:#f6e7b8;
+  --ink:#10233f;--muted:#5b6b80;--bg:#f6f8fc;--surface:#fff;--surface-2:#eef4fb;--line:#dbe6f2;
+  --chip:#e8f1fd;--chip-ink:#0757a6;--shadow:0 10px 30px rgba(16,35,63,.08);--shadow-lg:0 22px 50px rgba(16,35,63,.16);
+  --radius:22px;--head:"Montserrat",system-ui,sans-serif;--body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ink:#e7eef8;--muted:#9fb0c6;--bg:#0b1320;--surface:#121d2e;--surface-2:#18263b;--line:#22324a;
+  --chip:#17304f;--chip-ink:#8cc4ff;--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-lg:0 22px 50px rgba(0,0,0,.5);
+}}
+:root[data-theme="dark"]{
+  --ink:#e7eef8;--muted:#9fb0c6;--bg:#0b1320;--surface:#121d2e;--surface-2:#18263b;--line:#22324a;
+  --chip:#17304f;--chip-ink:#8cc4ff;--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-lg:0 22px 50px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5;overflow-x:hidden}
+body.locked{overflow:hidden}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
+
+/* Header */
+header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--surface) 86%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.bar{max-width:1250px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-family:var(--head);font-size:23px;font-weight:900;color:var(--blue);text-decoration:none;white-space:nowrap;letter-spacing:-.02em}
+:root[data-theme="dark"] .logo{color:#8cc4ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo{color:#8cc4ff}}
+.logo i{font-style:normal;color:var(--gold)}
+nav{display:flex;gap:6px;align-items:center;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.navlink{border:0;border-radius:12px;padding:9px 13px;background:transparent;color:var(--ink);font-weight:600;font-size:14px;cursor:pointer;white-space:nowrap;text-decoration:none}
+.navlink:hover{background:var(--chip);color:var(--chip-ink)}
+.iconbtn{border:1px solid var(--line);background:var(--surface);width:40px;height:40px;border-radius:12px;display:grid;place-items:center;cursor:pointer;flex:none;font-size:17px}
+.favcount{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--gold);color:#3b2a00;font-size:11px;font-weight:800;margin-left:4px}
+
+/* Hero */
+.hero{position:relative;min-height:min(86vh,720px);display:grid;align-items:end;color:#fff;overflow:hidden;isolation:isolate}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.04);animation:zoom 18s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,24,48,.25) 0%,rgba(6,24,48,.35) 40%,rgba(6,24,48,.92) 100%)}
+.herobody{max-width:1250px;width:100%;margin:auto;padding:90px 20px 56px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:30px;background:var(--chip);color:var(--chip-ink);font-weight:700;font-size:12px;letter-spacing:.04em}
+.hero .badge{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px)}
+.hero h1{font-size:clamp(40px,7.4vw,86px);font-weight:900;margin:16px 0 12px;letter-spacing:-.03em;max-width:14ch}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:clamp(16px,2vw,20px);max-width:640px;margin:0;opacity:.92}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:14px;padding:13px 18px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:#2b1f00;box-shadow:0 10px 24px rgba(214,166,41,.35)}
+.btn.glass{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.soft{background:var(--chip);color:var(--chip-ink)}
+.stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.2)}
+.stats b{display:block;font-family:var(--head);font-size:30px;font-weight:800;color:var(--gold)}
+.stats span{font-size:13px;opacity:.85}
+.ornament{height:14px;background:repeating-linear-gradient(90deg,var(--gold) 0 14px,transparent 14px 20px,var(--blue) 20px 34px,transparent 34px 40px);opacity:.85}
+
+/* Sections */
+.wrap{max-width:1250px;margin:auto;padding:64px 20px}
+.kicker{color:var(--gold);font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.title{font-size:clamp(28px,4vw,40px);font-weight:800;margin:6px 0 8px;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0;max-width:720px}
+
+/* Trip planner */
+.tripbox{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(18px,3vw,32px);box-shadow:var(--shadow);margin-top:24px}
+.days{display:inline-flex;gap:4px;padding:5px;background:var(--surface-2);border-radius:16px;flex-wrap:wrap}
+.day{border:0;border-radius:12px;padding:11px 20px;background:transparent;color:var(--muted);font-weight:700;cursor:pointer}
+.day[aria-selected="true"]{background:var(--blue);color:#fff;box-shadow:0 6px 16px rgba(7,87,166,.3)}
+.route{display:none;margin-top:22px}
+.route.active{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}}
+.routehead{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.routehead h3{font-size:22px}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:21px;top:22px;bottom:22px;width:2px;background:repeating-linear-gradient(var(--line) 0 6px,transparent 6px 11px)}
+.stop{position:relative;display:flex;gap:14px;align-items:flex-start;padding:10px;border-radius:18px;cursor:pointer;transition:background .15s;border:0;background:transparent;text-align:left;width:100%}
+.stop:hover{background:var(--surface-2)}
+.stop.current{background:var(--chip)}
+.stop.current .num{background:var(--gold);color:#2b1f00}
+.stop .num{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font-family:var(--head);font-weight:800;box-shadow:0 0 0 5px var(--surface);position:relative;z-index:1}
+.stop img{flex:none;width:68px;height:68px;border-radius:14px;object-fit:cover;background:var(--surface-2)}
+.stop h4{font-size:16px;margin:2px 0 4px}
+.stop p{margin:0;color:var(--muted);font-size:14px}
+.stop .more{font-size:12.5px;color:var(--chip-ink);font-weight:700;margin-top:6px;display:inline-block;border:0;background:none;padding:2px 0;cursor:pointer}
+.stop .more:hover{text-decoration:underline}
+.maplabel{font-size:14px;color:var(--muted)}
+.maplabel b{color:var(--ink)}
+.mapcol{display:flex;flex-direction:column;gap:12px}
+.map{width:100%;flex:1;min-height:380px;border:0;border-radius:20px;background:var(--surface-2)}
+.notice{font-size:13px;color:var(--muted);margin:14px 0 0}
+
+/* Places */
+.toolbar{position:sticky;top:65px;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:14px 0;margin:18px 0 6px;display:flex;flex-direction:column;gap:12px}
+.search{position:relative}
+.search input{width:100%;padding:14px 16px 14px 46px;border-radius:16px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:16px;box-shadow:var(--shadow)}
+.search input::placeholder{color:var(--muted)}
+.search:before{content:"🔎";position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:16px;opacity:.7}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);border-radius:30px;padding:9px 15px;background:var(--surface);color:var(--ink);font-weight:600;font-size:14px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip small{opacity:.6;margin-left:4px}
+.cat{margin-top:34px}
+.cat h2{font-size:24px;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.cat h2 small{font-family:var(--body);font-size:14px;color:var(--muted);font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.card .ph{position:relative;aspect-ratio:4/3;background:var(--surface-2);overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .ph img{transform:scale(1.05)}
+.card .time{position:absolute;left:12px;bottom:12px;background:rgba(10,20,35,.72);color:#fff;font-size:12px;font-weight:600;padding:5px 9px;border-radius:9px;backdrop-filter:blur(4px)}
+.card .stockmark{position:absolute;right:12px;bottom:12px;background:rgba(10,20,35,.72);color:#fff;font-size:11px;padding:4px 8px;border-radius:8px}
+.fav{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.92);display:grid;place-items:center;cursor:pointer;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .15s;z-index:2}
+.fav:hover{transform:scale(1.1)}
+.fav[aria-pressed="true"]{background:#fff0f0}
+.cardbody{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tag{display:inline-block;align-self:flex-start;background:var(--chip);color:var(--chip-ink);border-radius:9px;padding:4px 9px;font-size:11px;font-weight:700;letter-spacing:.03em}
+.card h3{font-size:19px;font-weight:800}
+.card p{color:var(--muted);margin:0;font-size:14.5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .addr{font-size:13px;color:var(--muted);margin-top:auto;padding-top:6px}
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty b{display:block;font-size:40px;margin-bottom:8px}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(5,15,30,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:18px;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.modal.show{opacity:1;visibility:visible}
+.modalbox{background:var(--surface);border-radius:28px;max-width:880px;width:100%;max-height:92vh;overflow:auto;position:relative;transform:translateY(16px) scale(.98);transition:transform .25s;overscroll-behavior:contain}
+.modal.show .modalbox{transform:none}
+.mhero{position:relative;height:clamp(220px,42vh,380px);background:var(--surface-2)}
+.mhero img{width:100%;height:100%;object-fit:cover}
+.mhero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(5,15,30,.75))}
+.mhero .mtitle{position:absolute;left:24px;right:24px;bottom:20px;z-index:1;color:#fff}
+.mhero .mtitle h2{font-size:clamp(26px,4vw,36px);font-weight:900;margin-top:8px}
+.mhero .tag{background:rgba(255,255,255,.2);color:#fff;backdrop-filter:blur(4px)}
+.mtools{position:absolute;top:14px;right:14px;z-index:2;display:flex;gap:8px}
+.mtools button{width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.94);color:#10233f;font-size:20px;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.mnav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:#10233f;font-size:22px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.mnav.prev{left:14px}.mnav.next{right:14px}
+.mcontent{padding:22px 24px 26px}
+.modaltext{font-size:16.5px;line-height:1.7;margin:0}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:18px 0 20px}
+.info div{background:var(--surface-2);border-radius:16px;padding:14px}
+.info b{display:block;color:var(--chip-ink);font-size:12px;margin-bottom:5px;letter-spacing:.02em}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.disclaimer{font-size:12.5px;color:var(--muted);margin:14px 0 0}
+
+/* Footer & misc */
+footer{background:var(--blue-deep);color:#dbe8f7;margin-top:30px}
+footer .wrap{padding:44px 20px;display:grid;gap:18px;grid-template-columns:1.2fr 1fr}
+footer .logo{color:#fff}
+footer p{margin:6px 0 0;font-size:14px;opacity:.8;max-width:520px}
+footer .links{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;justify-content:flex-end}
+footer .links a,footer .links button{color:#fff;background:rgba(255,255,255,.08);border:0;border-radius:10px;padding:8px 12px;text-decoration:none;font-size:14px;cursor:pointer}
+.totop{position:fixed;right:18px;bottom:18px;z-index:30;width:48px;height:48px;border-radius:50%;border:0;background:var(--blue);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 10px 24px rgba(7,87,166,.35);opacity:0;pointer-events:none;transform:translateY(10px);transition:.2s}
+.totop.show{opacity:1;pointer-events:auto;transform:none}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:12px;font-size:14px;font-weight:600;opacity:0;transition:.25s;z-index:200;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .route.active{grid-template-columns:1fr}
+  .map{min-height:300px}
+  footer .wrap{grid-template-columns:1fr}
+  footer .links{justify-content:flex-start}
+}
+@media (max-width:640px){
+  .bar{padding:10px 16px}
+  .logo{font-size:20px}
+  .navlink .lbl{display:none}
+  .navlink{padding:9px 10px;font-size:17px}
+  .toolbar{position:static}
+  .wrap{padding:48px 16px}
+  .herobody{padding:70px 16px 40px}
+  .stats{gap:20px}.stats b{font-size:24px}
+  .grid{grid-template-columns:1fr}
+  .stop img{width:56px;height:56px}
+  .modal{padding:0;align-items:flex-end}
+  .modalbox{border-radius:24px 24px 0 0;max-height:94vh}
+  .mnav{width:36px;height:36px;font-size:18px}
+}
+@media (max-width:400px){
+  .bar{padding:10px 12px;gap:6px}
+  .logo{font-size:18px}
+  nav{gap:2px}
+  .navlink{padding:8px 6px}
+  .iconbtn{width:36px;height:36px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="#top">Vibe <i>of</i> Taraz</a>
+    <nav aria-label="Негізгі мәзір">
+      <a class="navlink" href="#plan" aria-label="Маршрут">🗺️<span class="lbl"> Маршрут</span></a>
+      <a class="navlink" href="#places" aria-label="Орындар">📍<span class="lbl"> Орындар</span></a>
+      <button class="navlink" id="favnav" type="button" aria-label="Таңдаулылар">❤️<span class="favcount" id="favcount">0</span></button>
+      <button class="iconbtn" id="themebtn" type="button" aria-label="Тақырыпты ауыстыру">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img src="img/kone-taraz.webp" alt="Көне Тараз кешені" fetchpriority="high">
+  <div class="herobody">
+    <span class="badge">✦ TARAZ CITY GUIDE • 2026</span>
+    <h1>Ежелгі қала. <span>Жаңа vibe.</span></h1>
+    <p>Тараздың тарихын, мәдениетін, тамағын, саудасын және демалыс орындарын бір жерден тап. Күнді таңда — маршрут, карта және әр нүктенің толық ақпараты дайын.</p>
+    <div class="cta">
+      <a class="btn gold" href="#plan">🗺️ Сапарды жоспарлау</a>
+      <a class="btn glass" href="#places">📍 Барлық орындар</a>
+    </div>
+    <div class="stats">
+      <div><b>2000+</b><span>жылдық тарих</span></div>
+      <div><b id="statPlaces">24</b><span>орын</span></div>
+      <div><b>6</b><span>санат</span></div>
+      <div><b>3</b><span>дайын маршрут</span></div>
+    </div>
+  </div>
+</section>
+<div class="ornament" aria-hidden="true"></div>
+
+<section class="wrap" id="plan">
+  <div class="reveal">
+    <span class="kicker">Plan your trip</span>
+    <h2 class="title">🗺️ Сапарыңды жоспарла</h2>
+    <p class="sub">1, 2 немесе 3 күндік дайын маршрут. Аялдамалар ретімен көрсетілген — біреуін бассаң, картада көрсетіледі; «Толығырақ» — толық ақпарат.</p>
+  </div>
+  <div class="tripbox reveal">
+    <div class="days" role="tablist" id="days"></div>
+    <div id="routes"></div>
+    <p class="notice">Ескерту: Google Maps-та нақты көлік/жаяу жүру бағыты сол сәттегі жол жағдайына қарай есептеледі.</p>
+  </div>
+</section>
+
+<section class="wrap" id="places" style="padding-top:20px">
+  <div class="reveal">
+    <span class="kicker">Explore</span>
+    <h2 class="title">📍 Тараздағы орындар</h2>
+    <p class="sub">Карточканы бас — үлкен терезеде толық сипаттама, мекенжай, не істеуге болатыны және Google Maps батырмасы шығады. ❤️ арқылы ұнаған орындарды сақта.</p>
+  </div>
+  <div class="toolbar">
+    <label class="search"><span class="sr" hidden>Іздеу</span><input id="q" type="search" placeholder="Орынды іздеу: кесене, кофе, саябақ..." autocomplete="off"></label>
+    <div class="chips" id="chips" role="toolbar" aria-label="Санаттар"></div>
+  </div>
+  <div id="app"></div>
+</section>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mh">
+  <div class="modalbox">
+    <div class="mhero">
+      <img id="mi" alt="">
+      <div class="mtools">
+        <button type="button" id="mfav" aria-label="Сақтау">🤍</button>
+        <button type="button" id="mshare" aria-label="Бөлісу">🔗</button>
+        <button type="button" id="mclose" aria-label="Жабу">×</button>
+      </div>
+      <button type="button" class="mnav prev" id="mprev" aria-label="Алдыңғы">‹</button>
+      <button type="button" class="mnav next" id="mnext" aria-label="Келесі">›</button>
+      <div class="mtitle"><span class="tag" id="mt"></span><h2 id="mh"></h2></div>
+    </div>
+    <div class="mcontent">
+      <p class="modaltext" id="md"></p>
+      <div class="info">
+        <div><b>📌 Мекенжай</b><span id="ma"></span></div>
+        <div><b>⏱️ Ұсынылатын уақыт</b><span id="mtime"></span></div>
+        <div><b>✨ Не көруге/істеуге болады</b><span id="mdo"></span></div>
+      </div>
+      <div class="actions">
+        <a class="btn primary" id="maplink" target="_blank" rel="noopener">📍 Google Maps-та ашу</a>
+        <a class="btn soft" id="sourcelink" target="_blank" rel="noopener">🌐 Ақпарат көзі</a>
+      </div>
+      <p class="disclaimer" id="mdisc"></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top">Vibe <i>of</i> Taraz</a>
+      <p>Ежелгі қала. Жаңа vibe. Ақпарат пен фотосуреттер ашық дереккөздерден алынды — жұмыс уақыты мен бағаны барар алдында тексеріп алыңыз.</p>
+    </div>
+    <div class="links">
+      <a href="#plan">Маршруттар</a>
+      <a href="#places">Орындар</a>
+      <a href="https://www.ezhelgi-taraz.kz/kk" target="_blank" rel="noopener">Ежелгі Тараз музей-қорығы</a>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" type="button" aria-label="Жоғары">↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== Деректер ===== */
+const CATS = {
+  history:  {name:"Тарих",              icon:"🏛️"},
+  food:     {name:"Тамақтану & кофе",   icon:"☕"},
+  shop:     {name:"Сауда",              icon:"🛍️"},
+  parks:    {name:"Парктер & серуен",   icon:"🌳"},
+  culture:  {name:"Мәдениет",           icon:"🎭"},
+  fun:      {name:"Ойын-сауық",         icon:"🎡"}
+};
+
+const PLACES = [
+  {id:"kone-taraz",cat:"history",name:"Көне Тараз",img:"img/kone-taraz.webp",desc:"Көне Тараз — Тараздың тарихи-мәдени кешені. Мұнда ежелгі қаланың тарихын танытатын археологиялық және мәдени кеңістіктер бар.",addr:"Тараз қаласының орталығы",time:"2–3 сағат",do:"Археологиялық аумақты, музейді, алаңдарды және тарихи архитектураны аралау.",src:"https://www.ezhelgi-taraz.kz/kk",query:"Kone Taraz Taraz"},
+  {id:"tekturmas",cat:"history",name:"Тектұрмас",img:"img/tekturmas.webp",desc:"Тектұрмас кесенесі Талас өзеніне жақын биіктеу жерде орналасқан тарихи нысан. Музей-қорықтың Тараздағы негізгі тарихи нысандарының бірі.",addr:"Тектұрмас, Тараз",time:"1–1,5 сағат",do:"Кесенені көру, айналаны тамашалау, фотоға түсу және Талас өзені жаққа қарау.",src:"https://www.ezhelgi-taraz.kz/kk",query:"Tekturmas Mausoleum Taraz"},
+  {id:"aisha-bibi",cat:"history",name:"Айша Бибі",img:"img/aisha-bibi.webp",desc:"Айша Бибі кесенесі XI–XII ғасырларға жататын сәулет ескерткіші. Тараздан шамамен 18 км жерде орналасқан. Кесененің қабырғаларында ерекше өрнекті терракота қаптамалары бар.",addr:"Айша Бибі ауылы маңы, Тараздан шамамен 18 км",time:"1–2 сағат",do:"Кесенені сыртынан және ішінен көру, архитектуралық өрнектерін зерттеу, тарихи аңыздармен танысу.",src:"https://www.ezhelgi-taraz.kz/kk/page/ajsha-bibi-kesenesi-xi-xiivv",query:"Aisha Bibi Mausoleum"},
+  {id:"karakhan",cat:"history",name:"Қарахан баба",img:"img/karakhan.webp",desc:"Қарахан кесенесі Тараздың орталық бөлігінде орналасқан тарихи сәулет ескерткіші. Ол Қараханидтер дәуірімен байланысты.",addr:"Тараз қаласының орталығы",time:"40–60 минут",do:"Кесенені көру, тарихи орталықпен бірге аралау және экскурсиялық ақпаратпен танысу.",src:"https://kieli.kz/kz/attraction/view?id=131",query:"Karakhan Mausoleum Taraz"},
+  {id:"akyrtas",cat:"history",name:"Ақыртас",img:"img/akyrtas.webp",desc:"Ақыртас — Тараз өңіріндегі көне сәулет-археологиялық кешен. Тас блоктардан құралған құрылыстың мақсаты мен тарихы зерттеушілер үшін маңызды нысан болып саналады.",addr:"Тараз маңы, Ақыртас кешені",time:"2–3 сағат",do:"Тас құрылымдарын аралау, археологиялық аумақты көру, табиғат аясында фото жасау.",src:"https://tengemonitor.kazgazeta.kz/news/30483",query:"Akyrtas Taraz"},
+  {id:"khanate",cat:"history",name:"Қазақ хандығы монументі",img:"img/khanate.webp",desc:"«Қазақ хандығы» монументі Тараздың батыс қақпасы маңында орналасқан. Композицияда 27 метрлік стелла және Керей мен Жәнібек хандардың мүсіндері бейнеленген.",addr:"Тараздың батыс қақпасы маңы",time:"30–60 минут",do:"Монументті көру, фотоға түсу және Қазақ хандығының тарихы туралы ақпарат оқу.",src:"https://www.gov.kz/memleket/entities/maidd/press/news/details/701493",query:"Kazakh Khanate Monument Taraz"},
+
+  {id:"saffron",cat:"food",name:"Saffron",img:"img/saffron.webp",desc:"Saffron — Тараздағы ресторандық кешен. Рестораннан бөлек Food-Park, ет және көкөніс дүкендері, Fish-Bar сияқты бағыттары бар.",addr:"Ниеткалиева көшесі 89Б, Тараз",time:"1,5–2,5 сағат",do:"Ресторанда тамақтану, Food-Park-ке бару немесе кешкі уақытта демалу.",src:"https://saffron.kz/",query:"Saffron Taraz"},
+  {id:"global-coffee",cat:"food",name:"Global Coffee",img:"img/global-coffee.webp",desc:"Global Coffee — Тараздағы кофе орындарының бірі. Кофе, шай, салқын сусындар және десерттерге арналған қаладағы ыңғайлы stop.",addr:"Тараз қаласы, Global Coffee",time:"30–90 минут",do:"Кофе, десерт алып, маршрут арасында демалу.",src:"https://www.gorodtaraz.kz/company/3381-kofeinja-global-coffee.html",query:"Global Coffee Taraz"},
+  {id:"discovery",cat:"food",name:"Discovery Coffee",img:"img/discovery.webp",desc:"Discovery Coffee — Тараздағы кофехана. Ағашпен қапталған әдемі фасады бар жайлы орын.",addr:"Қазыбек би көшесі, Тараз",time:"30–90 минут",do:"Кофе ішу, жеңіл десерт/тағам алып, демалу.",src:"https://discovery-coffee-2-1.wheree.com/",query:"Discovery Coffee Taraz"},
+  {id:"kishmish",cat:"food",name:"KishMish Chaikhana",img:"img/kishmish.webp",desc:"KishMish — Тараздағы шайхана. Мәзірі азиялық және шығыс-еуропалық бағыттарды қамтиды.",addr:"Қойгелді көшесі 215, Тараз",time:"1–2 сағат",do:"Шайхана тағамдарын көру, таңғы ас/түскі ас/кешкі ас ішу.",src:"https://www.tripadvisor.co.uk/Restaurant_Review-g1638447-d15202141-Reviews-KishMish_Chaikhana-Taraz_Jambyl_Province.html",query:"KishMish Chaikhana Taraz"},
+  {id:"al-kausar",cat:"food",name:"Al-Kausar",img:"img/al-kausar.webp",stock:true,desc:"Al-Kausar — Тараздағы шайхана/кафе. Мейрамхана, жеткізу және takeaway қызметтері бар.",addr:"Дінмұхамед Қонаев көшесі 83, Тараз",time:"1–2 сағат",do:"Шайхана тағамдары, ет тағамдары, салаттар және басқа мәзірді таңдау.",src:"https://yandex.kz/maps/ru/org/al_kausar/213937522640/",query:"Al-Kausar Taraz"},
+
+  {id:"mart",cat:"shop",name:"MART",img:"img/mart.webp",desc:"MART — Тараздағы сауда және ойын-сауық орталығы. Саудадан бөлек тамақтану мен ойын-сауық нүктелерін бір жерден табуға болады.",addr:"Төле би даңғылы 27, Тараз",time:"2–4 сағат",do:"Дүкендерді аралау, тамақтану, ойын-сауық аймағына бару.",src:"https://yandex.com/maps/21094/taraz/category/shopping_mall/184108083/",query:"MART Taraz"},
+  {id:"grand-bazaar",cat:"shop",name:"Grand Bazaar",img:"img/grand-bazaar.webp",desc:"Grand Bazaar — Тараздағы ірі сауда орындарының бірі. Күнделікті тауарлар мен жергілікті базар атмосферасын көруге болады.",addr:"Сыпатай батыр көшесі 2, Тараз",time:"1–2 сағат",do:"Базарды аралау, жергілікті сауда атмосферасын көру.",src:"https://yandex.com/maps/21094/taraz/category/shopping_mall/184108083/",query:"Grand Bazaar Taraz"},
+  {id:"taraz-mall",cat:"shop",name:"Taraz Mall",img:"img/taraz-mall.webp",desc:"Taraz Mall — Төле би даңғылы 22А мекенжайындағы сауда орталығы. Күн сайын 10:00–21:00 аралығында жұмыс істейді.",addr:"Төле би даңғылы 22А, Тараз",time:"1,5–3 сағат",do:"Дүкендерді аралау және сауда жасау.",src:"https://yandex.kz/maps/ru/21094/taraz/house/tole_bi_dangghyly_22a/Y0gYdQ9oSkEEQFpofXVxcH9lbA%3D%3D/",query:"Taraz Mall Tole Bi 22A"},
+  {id:"mart-magnat",cat:"shop",name:"Mart-Magnat",img:"img/mart-magnat.webp",desc:"Mart-Magnat — Жамбыл даңғылы 200 мекенжайында орналасқан сауда орталығы.",addr:"Жамбыл даңғылы 200, Тараз",time:"1–2 сағат",do:"Сауда жасау және жақын маңдағы қала нүктелерін аралау.",src:"https://yandex.com/maps/21094/taraz/category/shopping_mall/184108083/",query:"Mart Magnat Taraz"},
+
+  {id:"zhenis",cat:"parks",name:"Жеңіс саябағы",img:"img/zhenis.webp",desc:"Жеңіс саябағы — Тараздағы мемориалдық және серуендеу кеңістігі. Мұнда Бауыржан Момышұлы ескерткіші, Даңқ аллеясы және еске алу нысандары бар.",addr:"Жеңіс саябағы, Тараз",time:"1–2 сағат",do:"Серуендеу, мемориалдарды көру, фотоға түсу.",src:"https://energy-taraz.kz/index.php/portfolio/park-zhenis",query:"Zhenis Park Taraz"},
+  {id:"arbat",cat:"parks",name:"Arbat",img:"img/arbat.webp",desc:"Arbat — Тараздың жаяу серуендеу кеңістігі. Кешке субұрқақтар мен жарықтандырылған аллея ерекше әдемі.",addr:"Тараз қаласының орталығы",time:"1–2 сағат",do:"Серуендеу, субұрқақтарды көру, кешкі уақытта фото жасау.",src:"https://fototerra.ru/photo-page/Kazahstan/Taraz/312412",query:"Arbat Taraz"},
+  {id:"ryskulbekov",cat:"parks",name:"Қайрат Рысқұлбеков саябағы",img:"img/ryskulbekov.webp",desc:"Қайрат Рысқұлбеков саябағы — Тараздағы қоғамдық кеңістіктердің бірі. Аумақта мемориалдық элементтер мен серуендеу орындары бар.",addr:"Қайрат Рысқұлбеков саябағы, Тараз",time:"1 сағат",do:"Серуендеу, ескерткіштерді көру, фотоға түсу.",src:"https://kaz.zakon.kz/",query:"Qairat Rysqulbekov Park Taraz"},
+
+  {id:"balasagun",cat:"culture",name:"Баласағұн орталық концерт залы",img:"img/balasagun.webp",desc:"Баласағұн — Тараздағы концерттер мен мәдени іс-шаралар өтетін орталық зал. Ғимараттың сыртқы сәулеті қаладағы танымал заманауи нысандардың бірі.",addr:"Тараз қаласы",time:"1,5–3 сағат",do:"Концерт немесе мәдени іс-шараға қатысу.",src:"https://www.inform.kz/ru/minuvshie-veka-i-sovremennost-v-fotosnimkah-goroda-taraza-d12cd1",query:"Balasagun Central Concert Hall Taraz"},
+  {id:"khimik",cat:"culture",name:"Мәдениет сарайы «Химик»",img:"img/khimik.webp",desc:"«Химик» мәдениет сарайы — Тараздағы мәдени кеңістіктердің бірі. Ғимарат алдында алаң, субұрқақ және серуендеу аймағы бар.",addr:"Тараз қаласы",time:"1–2 сағат",do:"Мәдени іс-шаралар афишасын қарап, концерт/бағдарламаға қатысу.",src:"https://tengrinews.kz/photo_contest/1648/",query:"Palace of Culture Khimik Taraz"},
+  {id:"museum",cat:"culture",name:"Ежелгі Тараз музей-қорығы",img:"img/museum.webp",desc:"«Ежелгі Тараз ескерткіштері» мемлекеттік тарихи-мәдени музей-қорығы Тараздың 2000 жылдан астам тарихын зерттеу, қорғау және таныстырумен айналысады.",addr:"Тараз",time:"1–3 сағат",do:"Тарихи материалдармен танысу, музей экспозицияларын көру және виртуалды турларды пайдалану.",src:"https://www.ezhelgi-taraz.kz/kk",query:"Ancient Taraz Museum Reserve"},
+
+  {id:"mart-fun",cat:"fun",name:"MART Entertainment",img:"img/mart.webp",desc:"MART ішінде саудамен бірге тамақтану және ойын-сауыққа арналған орындар бар. Сондықтан оны қала ішіндегі демалыс маршрутына қосуға болады.",addr:"Төле би даңғылы 27, Тараз",time:"2–4 сағат",do:"Ойын-сауық, тамақтану және сауда.",src:"https://yandex.com/maps/21094/taraz/category/shopping_mall/184108083/",query:"MART Taraz entertainment"},
+  {id:"cinema",cat:"fun",name:"Кинотеатрлар",img:"img/cinema.webp",stock:true,desc:"Тараздағы кинотеатрлар — қаладағы кешкі демалысқа арналған нұсқалардың бірі. Фильм кестесін барған күні нақтылап алған дұрыс.",addr:"Тараз қаласы",time:"2–3 сағат",do:"Кино көру және жақын маңдағы кафе/сауда орындарына бару.",src:"https://www.google.com/maps/search/cinema+Taraz",query:"cinema Taraz Kazakhstan"},
+  {id:"family-fun",cat:"fun",name:"Отбасылық ойын-сауық",img:"img/family-fun.webp",desc:"Отбасылық ойын-сауық орталықтарын Тараздағы сауда орталықтарынан табуға болады. Нақты ойын аймағы мен жұмыс уақытын картадан тексерген дұрыс.",addr:"Тараз",time:"1,5–3 сағат",do:"Балаларға арналған ойындар, отбасылық демалыс және тамақтану.",src:"https://www.google.com/maps/search/family+entertainment+Taraz",query:"family entertainment Taraz"}
+];
+
+const ROUTES = [
+  {day:1,title:"1-күн — Ежелгі Тараз",badge:"Тарих • шамамен бір күн",stops:[
+    ["kone-taraz","Таңертең тарихи-мәдени кешеннен баста. Археологиялық орындар мен музей экспозицияларын аралауға болады."],
+    ["karakhan","Көне Тараздан кейін қала орталығындағы тарихи кесенеге бар."],
+    ["tekturmas","Түстен кейін Талас өзені маңындағы биіктеу жерде орналасқан кешенге бар."],
+    ["global-coffee","Күнді кофе мен жеңіл демалыспен аяқта."]]},
+  {day:2,title:"2-күн — Айша Бибі + Ақыртас + қала",badge:"Тарих • қала сыртындағы бағыт",stops:[
+    ["aisha-bibi","Таңертең Тараздан шамамен 18 км жердегі әйгілі кесенеге бар."],
+    ["akyrtas","Көне сәулет-археологиялық кешенін аралап, тас құрылымдарын көр."],
+    ["kone-taraz","Қалаға оралған соң тарихи кешенге кіріп, музей мен археологиялық аймақты арала."],
+    ["saffron","Кешкі асқа ресторан кешеніне тоқта."]]},
+  {day:3,title:"3-күн — Парк + Arbat + сауда + кофе",badge:"Қала vibe • демалыс",stops:[
+    ["zhenis","Таңертең саябақта серуендеп, мемориалдық алаңды көр."],
+    ["arbat","Жаяу серуендеп, қала ортасының атмосферасын сезін."],
+    ["mart","Сауда, тамақтану және ойын-сауық үшін бірнеше сағат қалдыр."],
+    ["discovery","Күн соңында кофе мен десертке тоқта."]]}
+];
+
+/* ===== Көмекшілер ===== */
+const $ = s => document.querySelector(s);
+const byId = Object.fromEntries(PLACES.map(p => [p.id, p]));
+const mapSearch = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+const store = {
+  get(k, d){ try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+let favs = new Set(store.get("vot-favs", []));
+const toast = msg => { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 1800); };
+
+/* ===== Тақырып ===== */
+const themeBtn = $("#themebtn");
+function applyTheme(t){
+  if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
+  const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  themeBtn.textContent = dark ? "☀️" : "🌙";
+}
+applyTheme(store.get("vot-theme", null));
+themeBtn.onclick = () => {
+  const dark = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const next = dark ? "light" : "dark"; store.set("vot-theme", next); applyTheme(next);
+};
+
+/* ===== Маршруттар ===== */
+const placeEmbed = id => "https://www.google.com/maps?q=" + encodeURIComponent(byId[id].query) + "&output=embed";
+function routeLink(r){
+  const q = r.stops.map(([id]) => byId[id].query);
+  return "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent(q[0]) + "&destination=" + encodeURIComponent(q.at(-1)) + "&waypoints=" + q.slice(1, -1).map(encodeURIComponent).join("%7C");
+}
+const daysEl = $("#days"), routesEl = $("#routes");
+ROUTES.forEach((r, i) => {
+  const b = document.createElement("button");
+  b.className = "day"; b.type = "button"; b.setAttribute("role","tab"); b.textContent = r.day + " күн";
+  b.setAttribute("aria-selected", i === 0); b.onclick = () => showDay(i);
+  daysEl.appendChild(b);
+
+  const el = document.createElement("div");
+  el.className = "route" + (i === 0 ? " active" : ""); el.id = "r" + r.day; el.setAttribute("role","tabpanel");
+  el.innerHTML = `
+    <div>
+      <div class="routehead"><span class="badge">${r.badge}</span><h3>${r.title}</h3></div>
+      <ol class="timeline">${r.stops.map(([id, note], n) => `
+        <li><div class="stop${n === 0 ? " current" : ""}" role="button" tabindex="0" data-id="${id}" aria-label="${byId[id].name} — картада көрсету">
+          <span class="num">${n + 1}</span>
+          <img src="${byId[id].img}" alt="" loading="lazy">
+          <span><h4>${byId[id].name}</h4><p>${note}</p><button class="more" type="button">Толығырақ →</button></span>
+        </div></li>`).join("")}
+      </ol>
+    </div>
+    <div class="mapcol">
+      <div class="maplabel">📍 Картада: <b>${byId[r.stops[0][0]].name}</b></div>
+      <iframe class="map" loading="lazy" title="${r.title} картасы" data-src="${placeEmbed(r.stops[0][0])}"></iframe>
+      <a class="btn primary" target="_blank" rel="noopener" href="${routeLink(r)}" style="justify-content:center">📍 Маршрутты Google Maps-та ашу</a>
+    </div>`;
+  const seq = r.stops.map(x => x[0]);
+  el.querySelectorAll(".stop").forEach(s => {
+    s.onclick = () => focusStop(el, s);
+    s.onkeydown = e => { if (e.target === s && (e.key === "Enter" || e.key === " ")){ e.preventDefault(); focusStop(el, s); } };
+    s.querySelector(".more").onclick = e => { e.stopPropagation(); openPlace(s.dataset.id, seq); };
+  });
+  routesEl.appendChild(el);
+});
+function focusStop(el, s){
+  el.querySelectorAll(".stop").forEach(x => x.classList.toggle("current", x === s));
+  el.querySelector(".maplabel b").textContent = byId[s.dataset.id].name;
+  const f = el.querySelector("iframe"); f.dataset.src = placeEmbed(s.dataset.id); f.src = f.dataset.src;
+  if (matchMedia("(max-width:900px)").matches) f.scrollIntoView({behavior:"smooth", block:"center"});
+}
+function loadMap(el){ const f = el.querySelector("iframe"); if (!f.src) f.src = f.dataset.src; }
+function showDay(i){
+  [...daysEl.children].forEach((b, n) => b.setAttribute("aria-selected", n === i));
+  [...routesEl.children].forEach((el, n) => { el.classList.toggle("active", n === i); if (n === i) loadMap(el); });
+}
+new IntersectionObserver((e, o) => { if (e[0].isIntersecting){ loadMap(routesEl.querySelector(".route.active")); o.disconnect(); } }, {rootMargin:"300px"}).observe(routesEl);
+
+/* ===== Орындар ===== */
+let activeCat = "all";
+const chipsEl = $("#chips"), app = $("#app"), qEl = $("#q");
+function renderChips(){
+  const opts = [["all", "✨ Барлығы", PLACES.length], ...Object.entries(CATS).map(([k, c]) => [k, c.icon + " " + c.name, PLACES.filter(p => p.cat === k).length]), ["fav", "❤️ Таңдаулылар", favs.size]];
+  chipsEl.innerHTML = opts.map(([k, label, n]) => `<button class="chip" type="button" data-k="${k}" aria-pressed="${k === activeCat}">${label}<small>${n}</small></button>`).join("");
+  chipsEl.querySelectorAll(".chip").forEach(c => c.onclick = () => { activeCat = c.dataset.k; renderChips(); renderPlaces(); });
+  $("#favcount").textContent = favs.size;
+}
+let visible = [];
+function renderPlaces(){
+  const q = qEl.value.trim().toLowerCase();
+  const match = p => (activeCat === "all" || p.cat === activeCat || (activeCat === "fav" && favs.has(p.id)))
+    && (!q || [p.name, p.desc, p.addr, p.do, CATS[p.cat].name].join(" ").toLowerCase().includes(q));
+  visible = PLACES.filter(match);
+  app.innerHTML = "";
+  if (!visible.length){
+    app.innerHTML = activeCat === "fav" && !q
+      ? `<div class="empty"><b>🤍</b>Әзірге таңдаулы орын жоқ. Карточкадағы ❤️ белгісін бас.</div>`
+      : `<div class="empty"><b>🔍</b>Ештеңе табылмады. Басқа сөзбен іздеп көр.</div>`;
+    return;
+  }
+  for (const [k, c] of Object.entries(CATS)){
+    const items = visible.filter(p => p.cat === k);
+    if (!items.length) continue;
+    const sec = document.createElement("div"); sec.className = "cat";
+    sec.innerHTML = `<h2>${c.icon} ${c.name} <small>${items.length}</small></h2><div class="grid"></div>`;
+    const grid = sec.querySelector(".grid");
+    items.forEach(p => {
+      const card = document.createElement("article");
+      card.className = "card"; card.tabIndex = 0; card.setAttribute("aria-label", p.name);
+      card.innerHTML = `
+        <div class="ph"><img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async">
+          <span class="time">⏱ ${p.time}</span>${p.stock ? `<span class="stockmark">иллюстрация</span>` : ""}</div>
+        <button class="fav" type="button" aria-label="Таңдаулыларға қосу" aria-pressed="${favs.has(p.id)}">${favs.has(p.id) ? "❤️" : "🤍"}</button>
+        <div class="cardbody"><span class="tag">${c.name}</span><h3>${p.name}</h3><p>${p.desc}</p><div class="addr">📌 ${p.addr}</div></div>`;
+      card.onclick = () => openPlace(p.id, visible.map(x => x.id));
+      card.onkeydown = e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); card.click(); } };
+      card.querySelector(".fav").onclick = e => { e.stopPropagation(); toggleFav(p.id); };
+      grid.appendChild(card);
+    });
+    app.appendChild(sec);
+  }
+}
+function toggleFav(id){
+  if (favs.has(id)){ favs.delete(id); toast("Таңдаулылардан алынды"); }
+  else { favs.add(id); toast("❤️ Таңдаулыларға қосылды"); }
+  store.set("vot-favs", [...favs]);
+  renderChips(); renderPlaces();
+  if (current === id) syncModalFav();
+}
+qEl.addEventListener("input", renderPlaces);
+$("#favnav").onclick = () => { activeCat = "fav"; renderChips(); renderPlaces(); $("#places").scrollIntoView(); };
+
+/* ===== Модаль ===== */
+const modal = $("#modal");
+let current = null, list = [], lastFocus = null;
+function syncModalFav(){ const on = favs.has(current); $("#mfav").textContent = on ? "❤️" : "🤍"; $("#mfav").setAttribute("aria-pressed", on); }
+function openPlace(id, seq){
+  const p = byId[id]; if (!p) return;
+  if (!modal.classList.contains("show")) lastFocus = document.activeElement;
+  current = id; list = seq && seq.length ? seq : PLACES.map(x => x.id);
+  $("#mi").src = p.img; $("#mi").alt = p.name;
+  $("#mt").textContent = CATS[p.cat].icon + " " + CATS[p.cat].name;
+  $("#mh").textContent = p.name;
+  $("#md").textContent = p.desc;
+  $("#ma").textContent = p.addr;
+  $("#mtime").textContent = p.time;
+  $("#mdo").textContent = p.do;
+  $("#maplink").href = mapSearch(p.query);
+  $("#sourcelink").href = p.src;
+  $("#mdisc").textContent = p.stock ? "Фото иллюстрациялық сипатта — нақты орынның суреті емес." : "";
+  const multi = list.length > 1;
+  $("#mprev").hidden = $("#mnext").hidden = !multi;
+  syncModalFav();
+  modal.classList.add("show"); document.body.classList.add("locked");
+  modal.querySelector(".modalbox").scrollTop = 0;
+  history.replaceState(null, "", "#place=" + id);
+  $("#mclose").focus({preventScroll:true});
+}
+function step(d){ const i = list.indexOf(current); openPlace(list[(i + d + list.length) % list.length], list); }
+function closeModal(){
+  if (!modal.classList.contains("show")) return;
+  modal.classList.remove("show"); document.body.classList.remove("locked");
+  history.replaceState(null, "", location.pathname + location.search);
+  lastFocus?.focus?.({preventScroll:true});
+}
+$("#mclose").onclick = closeModal;
+$("#mprev").onclick = () => step(-1);
+$("#mnext").onclick = () => step(1);
+$("#mfav").onclick = () => toggleFav(current);
+$("#mshare").onclick = async () => {
+  const url = location.href.split("#")[0] + "#place=" + current, title = byId[current].name + " — Vibe of Taraz";
+  try { if (navigator.share) await navigator.share({title, url}); else { await navigator.clipboard.writeText(url); toast("🔗 Сілтеме көшірілді"); } } catch {}
+};
+modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+document.addEventListener("keydown", e => {
+  if (!modal.classList.contains("show")) return;
+  if (e.key === "Escape") closeModal();
+  else if (e.key === "ArrowLeft") step(-1);
+  else if (e.key === "ArrowRight") step(1);
+  else if (e.key === "Tab"){
+    const f = [...modal.querySelectorAll("button:not([hidden]),a[href]")].filter(x => x.offsetParent);
+    if (!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]){ e.preventDefault(); f.at(-1).focus(); }
+    else if (!e.shiftKey && document.activeElement === f.at(-1)){ e.preventDefault(); f[0].focus(); }
+  }
+});
+let touchX = null;
+modal.addEventListener("touchstart", e => { if (e.target.closest(".mhero")) touchX = e.touches[0].clientX; }, {passive:true});
+modal.addEventListener("touchend", e => { if (touchX == null) return; const dx = e.changedTouches[0].clientX - touchX; touchX = null; if (Math.abs(dx) > 60 && list.length > 1) step(dx < 0 ? 1 : -1); });
+
+/* ===== Басқалар ===== */
+const totop = $("#totop");
+addEventListener("scroll", () => totop.classList.toggle("show", scrollY > 900), {passive:true});
+totop.onclick = () => scrollTo({top:0, behavior:"smooth"});
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+document.addEventListener("error", e => { if (e.target.tagName === "IMG") e.target.style.visibility = "hidden"; }, true);
+
+$("#statPlaces").textContent = PLACES.length;
+renderChips(); renderPlaces();
+const m = location.hash.match(/^#place=([\w-]+)/);
+if (m && byId[m[1]]) openPlace(m[1]);
+</script>
+</body>
+</html>
